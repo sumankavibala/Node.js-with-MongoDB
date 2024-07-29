@@ -70,9 +70,10 @@ const updateProduct = async (req: Request, res: Response) => {
     }
 
     const productupdateRepo = await product.findByIdAndUpdate(
-      productViewByIDRepoforupdate,
+      productViewByIDRepoforupdate || payload,
       payload
     );
+    console.log(productupdateRepo);
     res.status(200).send({
       Result: "Product updated successfully",
     });
