@@ -12,7 +12,7 @@ import {
   updateProductByIDRouter,
   viewAllProductRouter,
   viewProductByIDRouter,
-} from "./src/product/product.controller";
+} from "./product/product.controller";
 
 dotenv.config();
 
