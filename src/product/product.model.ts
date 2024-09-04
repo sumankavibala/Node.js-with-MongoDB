@@ -1,4 +1,3 @@
-import { number } from "joi";
 import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema({
@@ -6,6 +5,13 @@ const productSchema = new mongoose.Schema({
   productName: String,
   productSpecs: String,
 });
+
+const cartSchema = new mongoose.Schema({
+  productID: Number,
+  Quantity: String,
+  createdDate: Date,
+  UpdatedDate: Date
+})
 
 const product = mongoose.model("productdetail", productSchema);
 

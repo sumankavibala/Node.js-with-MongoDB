@@ -1,7 +1,7 @@
 import Express from "express";
 
 // Code for inserting product into DB
-import { addProduct } from "./product.service";
+import { addProduct, insertCart } from "./product.service";
 const addProductRouter = Express.Router();
 addProductRouter
   .route("/insertProduct")
@@ -34,6 +34,11 @@ const deleteproductByIDRouter = Express.Router();
 deleteproductByIDRouter
   .route("/deleteProductbyID/:productID")
   .delete((req: any, res: any) => deleteProduct(req, res));
+
+export const insertCartByIDRouter = Express.Router();
+insertCartByIDRouter
+  .route("/insertCartByID/:productID")
+  .post((req:any,res:any)=>insertCart(req,res));
 
 export {
   addProductRouter,

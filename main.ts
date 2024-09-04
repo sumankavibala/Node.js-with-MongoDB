@@ -8,6 +8,7 @@ import cors from 'cors';
 import {
   addProductRouter,
   deleteproductByIDRouter,
+  insertCartByIDRouter,
   updateProductByIDRouter,
   viewAllProductRouter,
   viewProductByIDRouter,
@@ -24,7 +25,7 @@ app.use(Express.json());
 app.use(cors());
 
 mongoose
-  .connect("mongodb://localhost:27017/nosql_db")
+  .connect(`mongodb+srv://${process.env.db_username}:${process.env.db_password}@cluster0.4harw.mongodb.net/deepak?retryWrites=true&w=majority&appName=Cluster0`)
   .then(() => console.log("mongodb connected successfully"))
   .catch((error) => console.log(error));
 
@@ -41,3 +42,5 @@ app.use("/viewProductById", viewProductByIDRouter);
 app.use("/updateproduct", updateProductByIDRouter);
 
 app.use("/deleteproduct", deleteproductByIDRouter);
+
+app.use("/insertCartbyID",insertCartByIDRouter);

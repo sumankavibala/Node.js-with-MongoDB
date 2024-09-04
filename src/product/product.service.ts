@@ -105,6 +105,20 @@ const deleteProduct = async (req: Request, res: Response) => {
   }
 };
 
+export const insertCart =  async(req:Request,res:Response)=>{
+const product_ID = req.params.productID;
+const insertCartRepo = await product.find({ productID: product_ID});
+const insertCartByIDRepo = await product.findByIdAndDelete(insertCartRepo);
+console.log("insertCartByIDRepo-->>",insertCartByIDRepo);
+
+}
+
+
+
+
+
+
+
 export {
   addProduct,
   viewAllProduct,
